@@ -1,26 +1,21 @@
-function MovieCard({ movie, onDelete }) {
+import { Link } from "react-router-dom";
+
+function MovieCard({ movie, onDelete, darkMode }) {
   return (
-    <div>
-      <h3 style={{ backgroundColor: "darkgray" }}>{movie.title}</h3>
+    <div className={`movie-card ${darkMode ? "dark" : "light"}`}>
+      <h3 style={{ backgroundColor: "darkgray" }}>
+        <Link to={`/movie/${movie.id}`} style={{ color: "black", textDecoration: "none" }}>{movie.title}</Link>
+      </h3>
       <br />
 
-      <div>
-        {movie.posterUrl && (
-          <iframe
-            src={movie.posterUrl}
-            frameborder="0"
-            width="300px"
-            height="250px"
-            title={`${movie.title} Poster`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-          gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-        )}
-      </div>
       <p>⭐ {movie.rating}</p>
       <p>{movie.description}</p>
-       <button onClick={() => onDelete(movie.id)} style={{border:"2px dashed darkgrey", borderRadius:"90px"}}>Delete</button>
+      <button
+        onClick={() => onDelete(movie.id)}
+        style={{ border: "2px dashed darkgrey", borderRadius: "90px" }}
+      >
+        Delete
+      </button>
     </div>
   );
 }

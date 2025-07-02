@@ -40,3 +40,40 @@
 .read-the-docs {
   color: #888;
 }
+
+.app-wrapper {
+  min-height: 100vh;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-wrapper.light {
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+.app-wrapper.dark {
+  background-color: #121212;
+  color: #f4f4f4;
+}
+
+.toggle-btn {
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+}
+
+
+.movie-card.dark {
+  background-color: #333;
+  color: white;
+}
+
+.movie-card.light {
+  background-color: #f9f9f9;
+  color: #111;
+}
